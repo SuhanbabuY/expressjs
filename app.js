@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 5000;
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 const mypage = (req, res) => {
     console.log(path.join(__dirname, 'pages', 'index.html'));
@@ -55,6 +56,28 @@ app.get('/myinfo/:name/:age', (req, res) => {
 //http://localhost:5000/phone?color=blue&price=750&size=5.8
 //http://localhost:5000/phone?color=black&price=1000&size=6.7
 //-------------------------------------------
+
+app.get('/student', (req, res) => {
+
+    res.send("show student details");
+});
+app.get('/student/:id', (req, res) => {
+    let studentId = req.params.id;
+    res.send(`show student details for student with ID: ${studentId}`);
+
+});
+app.post('/addstudent', (req, res) => {
+    res.send("create a new student");
+});
+app.put('/student/:id', (req, res) => {
+    let studentId = req.params.id;
+    res.send(`update student details for student with ID: ${studentId}`);
+});
+app.delete('/student/:id', (req, res) => {
+    let studentId = req.params.id;
+    res.send(`delete student with ID: ${studentId}`);
+});
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

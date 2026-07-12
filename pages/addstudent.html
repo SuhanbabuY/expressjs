@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add Student Page</h1>
+    
+    <form action="/student" method="POST">
+
+        <label for="id" > ID:</label>
+        <input type="text"  disabled><br><br>
+
+        <label for="admissionNumber">Admission Number:</label>
+        <input type="text" id="admissionNumber" name="admissionNumber"><br><br>
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <label for="nic">National Identity Card:</label>
+        <input type="text" id="nic" name="nic"><br><br>
+
+        <label for="birthcertificatenumber">Birth Certificate Number:</label>
+        <input type="text" id="birthcertificatenumber" name="birthcertificatenumber"><br><br>
+
+        <label for="house_id">House ID: </label>
+        <input type="text" id="house_id" name="house_id"><br><br>
+
+        <label for="grade_id">Grade ID:</label>
+        <input type="text" id="grade_id" name="grade_id"><br><br>
+
+        <label for="medium_id">Medium:</label>
+        <select id="medium_id" name="medium_id">
+            <option value="tamil">Tamil</option>
+            <option value="english">English</option>
+            <option value="sinhala">Sinhala</option>
+        </select><br><br>
+        <label for="dateofadmission">Date of Admission:</label>
+        <input type="date" id="dateofadmission" name="dateofadmission"><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="button" value="Cancel">
+        <input type="reset" value="Clear">
+
+
+    </form>
+</body>
+
+</html>

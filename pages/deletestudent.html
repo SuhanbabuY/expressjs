@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Delete Student Page</h1>
+   
+    <form action="/student/:id?_method=DELETE" method="POST">
+
+        <label for="id"> ID:</label>
+        <input type="text" disabled><br><br>
+
+       
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <label for="nic">National Identity Card:</label>
+        <input type="text" id="nic" name="nic"><br><br>
+
+        <input type="button" value="Delete">
+        <input type="button" value="Cancel">
+        
+    </form>
+</body>
+
+</html>
