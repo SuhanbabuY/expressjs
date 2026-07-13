@@ -58,15 +58,13 @@ app.get('/myinfo/:name/:age', (req, res) => {
 //-------------------------------------------
 
 app.get('/student', (req, res) => {
-
     res.send("show student details");
 });
 app.get('/student/:id', (req, res) => {
     let studentId = req.params.id;
     res.send(`show student details for student with ID: ${studentId}`);
-
 });
-app.post('/addstudent', (req, res) => {
+app.post('/student', (req, res) => {
     res.send("create a new student");
 });
 app.put('/student/:id', (req, res) => {
@@ -77,8 +75,6 @@ app.delete('/student/:id', (req, res) => {
     let studentId = req.params.id;
     res.send(`delete student with ID: ${studentId}`);
 });
-
-
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
