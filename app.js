@@ -140,6 +140,7 @@ app.get('/student/:id/delete', (req, res) => {
     });
 });
 
+
 app.post('/student', (req, res) => {
     const { name, age } = req.body;
     res.send(`create a new student: ${name}, Age: ${age}`);
