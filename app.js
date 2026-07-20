@@ -32,7 +32,7 @@ app.get('/student', (req, res) => {
         if (err) {
             res.send('Error connecting to the database!');
         } else {
-            db.query('SELECT * FROM students', (err, results) => {
+            db.query('SELECT * FROM students limit 30', (err, results) => {
                 if (err) {
                     res.send('Error executing query!');
                 } else {
@@ -46,7 +46,28 @@ app.get('/student', (req, res) => {
 });
 app.get('/student/:id/show', (req, res) => {
     const studentId = req.params.id;
-    res.render('student/show', { title: 'Student show Page', message: `Welcome to the student page for student ID: ${studentId}` });
+    if (!studentId) {
+        res.status(400).send('Student ID is required');
+        return;
+    }
+    db.connect((err) => {
+        if (err) {
+            res.send('Error connecting to the database!');
+        } else {
+            db.query('SELECT * FROM students WHERE id = ?', [studentId], (err, results) => {
+                if (err) {
+                    res.send('Error executing query!');
+                }
+                else if (results.length === 0) {
+                    res.status(404).render('student/not_found', { title: 'Student not found', message: 'The requested student was not found.' });
+                }
+                else {
+                    console.log(results);
+                    res.render('student/show', { title: 'Student show Page', message: `Welcome to the student page for student ID: ${studentId}`, student: results[0] });
+                }
+            });
+        }
+    });
 });
 
 app.get('/student/create', (req, res) => {
