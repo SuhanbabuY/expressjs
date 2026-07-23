@@ -78,7 +78,7 @@ app.get('/student/create', (req, res) => {
 });
 app.post('/student', (req, res) => {
     // res.send('Received data: ' + JSON.stringify(req.body));
-    const {admission_number, first_name, last_name,} = req.body;
+    const {admission_number, first_name, last_name,gender,date_of_birth,nic_number,birth_certificate_number,tele_number,house_id,grade_id,medium,date_of_admission,per_address,family_id} = req.body;
 
     // res.send(`Received data: Admission Number - ${admission_no}, First Name - ${first_name}, Last Name - ${last_name}`);
     if (!admission_number || !first_name || !last_name ) {
@@ -92,7 +92,7 @@ app.post('/student', (req, res) => {
             res.send('Error connecting to the database!');
         } else {
 
-            db.query('INSERT INTO students ( admission_number, first_name, last_name ) VALUES ( ?, ?, ?)', [admission_number, first_name, last_name], (err, results) => {
+            db.query('INSERT INTO students ( admission_number, first_name, last_name,gender, date_of_birth, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [admission_number, first_name, last_name, gender, date_of_birth, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id], (err, results) => {
                 if (err) {
                     console.error(err);
                     return res.send(err.sqlMessage);
