@@ -76,6 +76,8 @@ app.get('/student/:id/show', (req, res) => {
 app.get('/student/create', (req, res) => {
     res.render('student/create', { title: 'Student Create Page', message: 'Welcome to the student create page!' });
 });
+
+
 app.post('/student', (req, res) => {
     // res.send('Received data: ' + JSON.stringify(req.body));
     const {admission_number, first_name, last_name,gender,date_of_birth,nic_number,birth_certificate_number,tele_number,house_id,grade_id,medium,date_of_admission,per_address,family_id} = req.body;
