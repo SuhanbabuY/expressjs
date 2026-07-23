@@ -26,7 +26,7 @@
             </td>
         </tr> -->
 
-    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; color: #091fe6; font-family: Arial, sans-serif;">
         <tr>
             <td>Admission No</td>
             <td>
@@ -48,11 +48,14 @@
         <tr>
             <td>Action</td>
             <td>
-                <a href="/student/<%= student.id %>/edit">Edit</a> |
-                <a href="/student/<%= student.id %>/delete">Delete</a>
+                <button onclick="window.location.href='/student/<%= student.id %>/edit'">Edit</button>
+                <button onclick="window.location.href='/student/<%= student.id %>/delete'">Delete</button>
+                <!-- <a href="/student/<%= student.id %>/edit">Edit</a> |
+                <a href="/student/<%= student.id %>/delete">Delete</a> -->
             </td>
         </tr>
     </table>
 
-</table>
-<p><a href="/student">Back to Student List</a></p>
+</table>.
+<button onclick="window.location.href='/student'">Back to Student List</button>
+<!-- <p><a href="/student">Back to Student List</a></p> -->

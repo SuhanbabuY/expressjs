@@ -1,14 +1,88 @@
-<!-- <form action="/student" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age" required><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>New Student  Registration Form</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/student" method="POST" class="row g-3">
+             
+
+                <div class="col-md-6">
+                    <label for="admission_number" class="form-label">Admission Number :</label>
+                    <input type="text" class="form-control" id="admission_number" name="admission_number" required
+                        placeholder="Enter admission number">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="first_name" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" required
+                        placeholder="Enter first name">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="last_name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required
+                        placeholder="Enter last name">
+                </div>
+
+                <div class="col-md-6">
+
+                <div class="col-12 text-center mt-4">
+                    <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+                    <input type="reset" value="Reset" class="btn btn-outline-secondary px-4">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <form action="/student" method="POST"  class="row g-3">
+    <div class="col-md-6">
+        <label for="admission_number">Admission Number :</label>
+        <input type="text" id="admission_number" name="admission_number" required placeholder="Enter admission number"><br><br>
+    </div>
+    
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required placeholder="Enter first name"><br><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required placeholder="Enter last name"><br><br>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select><br><br>
+    <label for="date_of_birth">Date of Birth:</label>
+    <input type="date" id="date_of_birth" name="date_of_birth" required ><br><br>
+    <label for="nic_number">NIC Number: </label>
+    <input type="text" id="nic_number" name="nic_number" required placeholder="Enter NIC number"><br><br>
+    <label for="birth_certificate_number">Birth Certificate Number:</label>
+    <input type="text" id="birth_certificate_number" name="birth_certificate_number" required placeholder="Enter birth certificate number"><br><br>
+    <label for="tele_number">Telephone Number:</label>
+    <input type="number" id="tele_number" name="tele_number" required placeholder="Enter your telephone number"><br><br>
+    <label for="house_id">House ID:</label>
+    <input type="text" id="house_id" name="house_id" required placeholder="Enter house ID"><br><br>
+    <label for ="grade_id">Grade ID: </label>
+    <input type="number" id="grade_id" name="grade_id" required placeholder="Enter grade ID"><br><br>
+    <label for="medium">Medium:</label>
+    <select id="medium" name="medium" required>
+        <option value="">Select Medium</option>
+        <option value="tamil">Tamil</option>
+        <option value="sinhala">Sinhala</option>
+        <option value="english">English</option>
+    </select><br><br>
+    <label for="date_of_admision">Date of Admissioin</label>
+    <input type="date" id="date_of_admision" name="date_of_admision" required><br><br>
+    <label for="per_address">Permanant Address:</label>
+    <textarea id="per_address" name="per_address" required placeholder="Enter permanent address"></textarea><br><br>
+    <label for="family_id">Family ID:</label>
+    <input type="number" id="family_id" name="family_id" required placeholder="Enter family ID"><br><br>
     <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
 </form> -->
 
-<form class="row g-3">
+<!-- <form class="row g-3">
     <div class="col-md-6">
         <label for="inputName" class="form-label">Name</label>
         <input type="text" class="form-control" id="inputName">
@@ -33,4 +107,4 @@
     <div class="col-12">
         <button type="submit" class="btn btn-dark">Create Student</button>
     </div>
-</form>
+</form> -->

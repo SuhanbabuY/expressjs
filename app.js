@@ -6,6 +6,7 @@ const port = 3000;
 app.set('view engine', 'ejs');
 app.use(layout);
 app.set('layout', 'layouts/main');
+app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.render('index', { title: 'home', message: 'Hello there!' });
 });
@@ -18,6 +19,8 @@ app.get('/connect', (req, res) => {
             db.query('SELECT * FROM students limit 2', (err, results) => {
                 if (err) {
                     res.send('Error executing query!');
+
+                    
                 } else {
                     console.log(results);
                     res.send(results);
@@ -32,7 +35,7 @@ app.get('/student', (req, res) => {
         if (err) {
             res.send('Error connecting to the database!');
         } else {
-            db.query('SELECT * FROM students limit 30', (err, results) => {
+            db.query('SELECT * FROM students order by id  desc limit 10 ', (err, results) => {
                 if (err) {
                     res.send('Error executing query!');
                 } else {
@@ -72,6 +75,33 @@ app.get('/student/:id/show', (req, res) => {
 
 app.get('/student/create', (req, res) => {
     res.render('student/create', { title: 'Student Create Page', message: 'Welcome to the student create page!' });
+});
+app.post('/student', (req, res) => {
+    // res.send('Received data: ' + JSON.stringify(req.body));
+    const {admission_number, first_name, last_name,} = req.body;
+
+    // res.send(`Received data: Admission Number - ${admission_no}, First Name - ${first_name}, Last Name - ${last_name}`);
+    if (!admission_number || !first_name || !last_name ) {
+        res.status(400).send('All fields are required');
+        return;
+    }
+
+
+    db.connect((err) => {
+        if (err) {
+            res.send('Error connecting to the database!');
+        } else {
+
+            db.query('INSERT INTO students ( admission_number, first_name, last_name ) VALUES ( ?, ?, ?)', [admission_number, first_name, last_name], (err, results) => {
+                if (err) {
+                    console.error(err);
+                    return res.send(err.sqlMessage);
+                } else {
+                    res.redirect('/student');
+                }
+            });
+        }
+    });
 });
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

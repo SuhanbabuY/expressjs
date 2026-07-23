@@ -7,9 +7,9 @@
 <table border="1" cellpadding="10" cellspacing="0" style="
     border-collapse: collapse; 
     width: 100%; 
-    background-color: #4c92a7; 
+    background-color: #6af071; 
     text-align: left;
-    color: #ffffff;
+    color: #0a1bb5;
     font-family: Arial, sans-serif;
     border: 2px solid #090a0a;
   ">
@@ -18,8 +18,9 @@
             <th>Admission No</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Gender</th>
-            <th>Medium</th>
+            <!-- <th>Gender</th>
+            <th>Medium</th> -->
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -34,11 +35,15 @@
                 <td>
                     <%= student.last_name %>
                 </td>
-                <td>
+                <!-- <td>
                     <%= student.gender %>
                 </td>
                 <td>
                     <%= student.medium %>   
+                </td> -->
+                <td>
+                    <button onclick="window.location.href='/student/<%= student.id %>/show'">View</button>
+                    <!-- <a href="/student/<%= student.id %>/show">View</a> -->
                 </td>
                
             </tr>
