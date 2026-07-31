@@ -1,0 +1,47 @@
+<h1>
+    <%= grade.grade_name %>'s Details
+</h1>
+<p>
+    <%= message %>
+</p>
+
+
+    <table  border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; color: #091fe6; font-family: Arial, sans-serif;" >
+        <tr>
+            <td>Grade Name</td>
+            <td>
+                <%= grade.grade_name %>
+            </td>
+        </tr>
+        <tr>
+            <td>Grade Groups</td>
+            <td>
+                <%= grade.grade_group %>
+            </td>
+        </tr>
+        <tr>
+            <td>Grade Order</td>
+            <td>
+                <%= grade.grade_order %>
+            </td>
+        </tr>
+        <tr>
+            <td>Colour</td>
+            <td>
+                <%= grade.colour %>
+            </td>
+        </tr>
+   
+        <tr>
+            <td>Action</td>
+            <td>
+                <button onclick="window.location.href='/grades/<%= grade.id %>/edit'" class="btn btn-info">Edit</button>
+                <form action="/grades/<%= grade.id %>?_method=DELETE" method="POST" style="display:inline;"
+                    onsubmit="return confirm('Are you sure you want to delete this grade?');">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+               
+            </td>
+        </tr>
+        <button onclick="window.location.href='/grades'" class="btn btn-primary">Back to Grade List</button>
+    </table>
