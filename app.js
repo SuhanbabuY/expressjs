@@ -127,6 +127,54 @@ app.post('/student', (req, res) => {
         }
     });
 });
+
+//student edit route
+app.get('/student/:id/edit', (req, res) => {
+    const studentId = req.params.id;
+    if (!studentId) {
+        res.status(400).send('Student ID is required');
+        return;
+    }   
+    db.connect((err) => {
+        if (err) {
+            res.send('Error connecting to the database!');
+        } else {
+            db.query('SELECT * FROM students WHERE id = ?', [studentId], (err, results) => {
+                if (err) {
+                    res.send('Error executing query!');
+                } else if (results.length === 0) {
+                    res.status(404).render('student/not_found', { title: 'Student not found', message: 'The requested student was not found.' });
+                } else {
+                    res.render('student/edit', { title: 'Edit Student Page' +"-"+ results[0].last_name, student: results[0] });
+                }
+            });
+        }
+    });
+});
+app.put('/student/:id', (req, res) => {
+    const studentId = req.params.id;
+    const { admission_number, first_name, last_name, gender, date_of_birth, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id } = req.body;
+
+    if (!admission_number || !first_name || !last_name) {
+        res.status(400).send('All fields are required');
+        return;
+    }
+
+    db.connect((err) => {
+        if (err) {
+            res.send('Error connecting to the database!');
+        } else {
+            db.query('UPDATE students SET admission_number = ?, first_name = ?, last_name = ?, gender = ?, date_of_birth = ?, nic_number = ?, birth_certificate_number = ?, tele_number = ?, house_id = ?, grade_id = ?, medium = ?, date_of_admission = ?, per_address = ?, family_id = ? WHERE id = ?', [admission_number, first_name, last_name, gender, date_of_birth, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id, studentId], (err, results) => {
+                if (err) {
+                    res.send('Error executing query!' + err);
+                } else {
+                    res.redirect('/student');
+                }
+            });
+        }
+    });
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });

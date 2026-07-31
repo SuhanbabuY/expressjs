@@ -1,0 +1,92 @@
+
+<h3><%= student.first_name %>
+    <%= student.last_name %>'S informations</h3>
+
+
+
+
+<div class="card-body">
+    <form action="/student/<%= student.id %>?_method=PUT" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label for="admission_number" class="form-label">Admission Number :</label>
+            <input type="text" class="form-control" id="admission_number" name="admission_number" required
+                placeholder="Enter admission number" value="<%= student.admission_number %>">
+        </div>
+        <div class="col-md-6">
+            <label for="first_name" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required
+                placeholder="Enter first name" value="<%= student.first_name %>">
+        </div>
+        <div class="col-md-6">
+            <label for="last_name" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required
+                placeholder="Enter last name" value="<%= student.last_name %>   ">
+        </div>
+        <div class="col-md-6">
+            <label for="gender" class="form-label">Gender:</label>
+            <select id="gender" name="gender" required class="form-select" value="<%= student.gender %>">
+                <option value='M'>Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="date_of_birth" class="form-label">Date of Birth:</label>
+            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="<%= student.date_of_birth %>">
+        </div>
+        <div class="col-md-6">
+            <label for="nic_number" class="form-label">NIC Number: </label>
+            <input type="text" class="form-control" id="nic_number" name="nic_number" placeholder="Enter NIC number" value="<%= student.nic_number %>">
+        </div>
+        <div class="col-md-6">
+            <label for="birth_certificate_number" class="form-label">Birth Certificate Number:</label>
+            <input type="text" class="form-control" id="birth_certificate_number" name="birth_certificate_number"
+                placeholder="Enter birth certificate number" value="<%= student.birth_certificate_number %>">
+        </div>
+
+        <div class="col-md-6">
+            <label for="tele_number" class="form-label">Telephone Number:</label>
+            <input type="number" class="form-control" id="tele_number" name="tele_number" value="<%= student.tele_number %>"
+                placeholder="Enter your telephone number">
+        </div>
+
+        <div class="col-md-6">
+            <label for="house_id" class="form-label">House ID:</label>
+            <input type="number" class="form-control" id="house_id" name="house_id" placeholder="Enter house ID" value="<%= student.house_id %>">
+        </div>
+        <div class="col-md-6">
+            <label for="grade_id" class="form-label">Grade ID: </label>
+            <input type="number" class="form-control" id="grade_id" name="grade_id" placeholder="Enter grade ID" value="<%= student.grade_id %>">
+        </div>
+
+        <div class="col-md-6">
+            <label for="medium" class="form-label">Medium:</label>
+            <select id="medium" name="medium" required class="form-select">
+                <option value="Sinhala">Sinhala</option>
+                <option value="Tamil">Tamil</option>
+                <option value="English">English</option>
+            </select>
+
+        </div>
+        <div class="col-md-6">
+            <label for="date_of_admission" class="form-label">Date of Admission</label>
+            <input type="date" class="form-control" id="date_of_admission" name="date_of_admission">
+        </div>
+
+        <div class="col-md-6">
+            <label for="per_address" class="form-label">Permanent Address:</label>
+            <textarea class="form-control" id="per_address" name="per_address"
+                placeholder="Enter permanent address"></textarea>
+        </div>
+
+        <div class="col-md-6">
+            <label for="family_id" class="form-label">Family ID:</label>
+            <input type="number" class="form-control" id="family_id" name="family_id" placeholder="Enter family ID">
+        </div>
+
+
+        <div class="col-12 text-center mt-4">
+            <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+            <input type="reset" value="Reset" class="btn btn-danger px-4">
+        </div>
+    </form>
+</div>
