@@ -250,31 +250,51 @@ app.delete('/grades/:id', (req, res) => {
     });
 });
 // grades edit route
+app.get('/grades/:id/edit', (req, res) => {
+    const gradeId = req.params.id;
+
+    db.query(
+        'SELECT * FROM grades WHERE id = ?',
+        [gradeId],
+        (err, results) => {
+            if (err) {
+                return res.send('Error executing query! ' + err);
+            }
+
+            if (results.length === 0) {
+                return res.send('Grade not found');
+            }
+
+            res.render('grades/edit', {
+                title: 'Edit Grade',
+                grade: results[0]
+            });
+        }
+    );
+});
+
 app.put('/grades/:id', (req, res) => {
     const gradeId = req.params.id;
     const { grade_name, grade_group, grade_order, colour } = req.body;
 
     if (!grade_name || !grade_group || !grade_order) {
-        res.status(400).send('All fields are required');
-        return;
+        return res.status(400).send('All fields are required');
     }
 
-    db.connect((err) => {
-        if (err) {
-            res.send('Error connecting to the database!');
-        } else {
-            db.query('UPDATE grades SET grade_name = ?, grade_group = ?, grade_order = ?, colour = ? WHERE id = ?', [grade_name, grade_group, grade_order, colour, gradeId], (err, results) => {
-                if (err) {
-                    res.send('Error executing query!' + err);
-                } else {
-                    res.redirect('/grades');
-                }
-            });
+    db.query(
+        'UPDATE grades SET grade_name=?, grade_group=?, grade_order=?, colour=? WHERE id=?',
+        [grade_name, grade_group, grade_order, colour, gradeId],
+        (err, results) => {
+            if (err) {
+                return res.send('Error updating grade: ' + err);
+            }
+
+            res.redirect('/grades');
         }
-    });
+    );
 });
 
-// 
+// show page for a specific grade
 app.get('/grades/:id/show', (req, res) => {
     const gradeId = req.params.id;
     if (!gradeId) {

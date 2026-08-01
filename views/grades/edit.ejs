@@ -1,0 +1,38 @@
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Edit Grade </h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/grades/<%= grade.id %>?_method=PUT" method="POST" class="row g-3">
+                <div class="col-md-6">
+                    <label for="grade_name" class="form-label">Grade Name:</label>
+                    <input type="text" class="form-control" id="grade_name" name="grade_name" required
+                        placeholder="Enter grade name" value="<%= grade.grade_name %>">
+                </div>
+                <div class="col-md-6">
+                    <label for="grade_group" class="form-label">Grade Group:</label>
+                    <input type="text" class="form-control" id="grade_group" name="grade_group" required
+                        placeholder="Enter grade group" value="<%= grade.grade_group %>">
+                </div>
+                <div class="col-md-6">
+                    <label for="grade_order" class="form-label">Grade Order:</label>
+                    <input type="number" class="form-control" id="grade_order" name="grade_order" required
+                        placeholder="Enter grade order" value="<%= grade.grade_order %>">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="colour" class="form-label">Colour:</label>
+                    <input type="text" class="form-control" id="colour" name="colour" required
+                        placeholder="Enter colour" value="<%= grade.colour %>">
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                    <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+                    <input type="reset" value="Reset" class="btn btn-danger px-4">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
