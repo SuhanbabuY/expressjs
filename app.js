@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use('/student', require('./routes/student.js'));
 app.use('/grades', require('./routes/grade.js'));
+app.use('/houses', require('./routes/house.js'));
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'home', message: 'This is the home page!' });

@@ -1,0 +1,27 @@
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Edit House </h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/houses/<%= house.id %>?_method=PUT" method="POST" class="row g-3">
+                <div class="col-md-6">
+                    <label for="house_name" class="form-label">House Name:</label>
+                    <input type="text" class="form-control" id="house_name" name="house_name" required
+                        placeholder="Enter house name" value="<%= house.house_name %>">
+                </div>
+                <div class="col-md-6">
+                    <label for="house_color" class="form-label">House Colour:</label>
+                    <input type="text" class="form-control" id="house_colour" name="house_color" required
+                        placeholder="Enter house colour" value="<%= house.house_color %>">
+                </div>
+            
+                <div class="col-12 text-center mt-4">
+                    <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+                    <input type="reset" value="Reset" class="btn btn-danger px-4">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
