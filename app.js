@@ -10,65 +10,37 @@ app.use(layout);
 app.set('layout', 'layouts/main');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
-app.get('/', (req, res) => {
-    res.render('index', { title: 'home', message: 'Hello there!' });
-});
-app.get('/connect', (req, res) => {
 
-    db.connect((err) => {
-        if (err) {
-            res.send('Error connecting to the database!');
-        } else {
-            db.query('SELECT * FROM students limit 2', (err, results) => {
-                if (err) {
-                    res.send('Error executing query!');
+
+app.get('/', (req, res) => {
+    res.render('index', { title: 'home', message: 'This is the home page!' });
+});
+
+//testing purpose code start---------------------------------------------------------------
+// app.get('/connect', (req, res) => {
+
+//     db.connect((err) => {
+//         if (err) {
+//             res.send('Error connecting to the database!');
+//         } else {
+//             db.query('SELECT * FROM students limit 2', (err, results) => {
+//                 if (err) {
+//                     res.send('Error executing query!');
 
                     
-                } else {
-                    console.log(results);
-                    res.send(results);
-                }
-            });
-        }
-    });
-});
+//                 } else {
+//                     console.log(results);
+//                     res.send(results);
+//                 }
+//             });
+//         }
+//     });
+// });
+//testing purpose code end---------------------------------------------------------------
 
-//student delete route
-app.delete('/student/:id', (req, res) => {
-    const studentId = req.params.id;
-    console.log(`Deleting student with ID: ${studentId}`);
-    db.connect((err) => {
-        if (err) {
-            res.send('Error connecting to the database!');
-        } else {
-            db.query('DELETE FROM students WHERE id = ?', [studentId], (err, results) => {
-                if (err) {
-                    res.send('Error executing query!' + err);
-                } else {
-                    res.redirect('/student');
-                }
-            });
-        }
-    });
-});
 
-app.get('/student', (req, res) => {
-    db.connect((err) => {
-        if (err) {
-            res.send('Error connecting to the database!');
-        } else {
-            db.query('SELECT * FROM students order by id  desc limit 10 ', (err, results) => {
-                if (err) {
-                    res.send('Error executing query!');
-                } else {
-                    console.log(results);
-                    res.render('student/index', { title: 'Student Page', message: 'Welcome to the student page!', students: results });
-                }
-            });
-        }
-    });
 
-});
+
 app.get('/student/:id/show', (req, res) => {
     const studentId = req.params.id;
     if (!studentId) {
