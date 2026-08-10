@@ -1,0 +1,75 @@
+<h3>
+    <%= teacher.first_name %>
+        <%= teacher.last_name %>'S informations
+</h3>
+
+<div class="card-body">
+    <form action="/teachers" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label for="registration_number" class="form-label">Registration Number :</label>
+            <input type="text" class="form-control" id="registration_number" name="registration_number" required
+                placeholder="Enter registration number" value="<%= teacher.registration_number %>">
+        </div>
+        <div class="col-md-6">
+            <label for="nic_number" class="form-label">NIC Number:</label>
+            <input type="text" class="form-control" id="nic_number" name="nic_number" required
+                placeholder="Enter NIC number" value="<%= teacher.nic_number %>">
+        </div>
+        <div class="col-md-6">
+            <label for="first_name" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required
+                placeholder="Enter first name" value="<%= teacher.first_name %>">
+        </div>
+        <div class="col-md-6">
+            <label for="last_name" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required
+                placeholder="Enter last name" value="<%= teacher.last_name %>">
+        </div>
+        <div class="col-md-6">
+            <label for="gender" class="form-label">Gender:</label>
+            <select id="gender" name="gender" required class="form-select" value="<%= teacher.gender %>">
+                <option value='M'>Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <lavel for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" required
+                    placeholder="Enter title Mr or Mrs" value="<%= teacher.title %>">
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="date_of_birth" class="form-label">Date of Birth:</label>
+            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="<%= teacher.date_of_birth %>">
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <label for="per_address" class="form-label">Permanent Address:</label>
+            <textarea class="form-control" id="per_address" name="per_address"
+                placeholder="Enter permanent address"><%= teacher.per_address %></textarea>
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="mobile_number" class="form-label">Mobile Number:</label>
+            <input type="number" class="form-control" id="mobile_number" name="mobile_number"
+                placeholder="Enter your mobile number" value="<%= teacher.mobile_number %> ">
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="date_of_first_appointment" class="form-label">Date of First Appointment</label>
+            <input type="date" class="form-control" id="date_of_first_appointment" name="date_of_first_appointment" value="<%= teacher.date_of_first_appointment %>">
+        </div>
+
+        <div class="col-12 text-center mt-4">
+            <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+            <input type="reset" value="Reset" class="btn btn-danger px-4">
+        </div>
+    </form>
+</div>

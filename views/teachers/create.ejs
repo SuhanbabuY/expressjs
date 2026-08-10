@@ -1,0 +1,145 @@
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>New Teacher Registration Form</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/teachers" method="POST" class="row g-3">
+                <div class="col-md-6">
+                    <label for="registration_number" class="form-label">Registration Number :</label>
+                    <input type="text" class="form-control" id="registration_number" name="registration_number" required
+                        placeholder="Enter registration number">
+                </div>
+                <div class="col-md-6">
+                    <label for="nic_number" class="form-label">NIC Number:</label>
+                    <input type="text" class="form-control" id="nic_number" name="nic_number" required
+                        placeholder="Enter NIC number">
+                </div>
+                <div class="col-md-6">
+                    <label for="first_name" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" required
+                        placeholder="Enter first name">
+                </div>
+                <div class="col-md-6">
+                    <label for="last_name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required
+                        placeholder="Enter last name">
+                </div>
+                <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender:</label>
+                    <select id="gender" name="gender" required class="form-select">
+                        <option value='M'>Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" required placeholder="Enter title Mr or Mrs">
+                </div>
+
+              
+                <div class="col-md-6">
+                    <label for="date_of_birth" class="form-label">Date of Birth:</label>
+                    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth">
+                </div>
+            
+              
+             
+
+                <div class="col-md-6">
+                    <label for="per_address" class="form-label">Permanent Address:</label>
+                    <textarea class="form-control" id="per_address" name="per_address" placeholder="Enter permanent address"></textarea>
+                 </div>
+   
+
+                <div class="col-md-6">
+                    <label for="mobile_number" class="form-label">Mobile Number:</label>
+                    <input type="number" class="form-control" id="mobile_number" name="mobile_number"
+                        placeholder="Enter your mobile number">
+                </div>
+
+          
+                <div class="col-md-6">
+                    <label for="date_of_first_appointment" class="form-label">Date of First Appointment</label>
+                    <input type="date" class="form-control" id="date_of_first_appointment" name="date_of_first_appointment">
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                    <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+                    <input type="reset" value="Reset" class="btn btn-danger px-4">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <form action="/student" method="POST"  class="row g-3">
+    <div class="col-md-6">
+        <label for="admission_number">Admission Number :</label>
+        <input type="text" id="admission_number" name="admission_number" required placeholder="Enter admission number"><br><br>
+    </div>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required placeholder="Enter first name"><br><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required placeholder="Enter last name"><br><br>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value='M'>Male</option>
+        <option value="F">Female</option>
+    </select><br><br>
+    <label for="date_of_birth">Date of Birth:</label>
+    <input type="date" id="date_of_birth" name="date_of_birth" required ><br><br>
+    <label for="nic_number">NIC Number: </label>
+    <input type="text" id="nic_number" name="nic_number" required placeholder="Enter NIC number"><br><br>
+    <label for="birth_certificate_number">Birth Certificate Number:</label>
+    <input type="text" id="birth_certificate_number" name="birth_certificate_number" required placeholder="Enter birth certificate number"><br><br>
+    <label for="tele_number">Telephone Number:</label>
+    <input type="number" id="tele_number" name="tele_number" required placeholder="Enter your telephone number"><br><br>
+    <label for="house_id">House ID:</label>
+    <input type="text" id="house_id" name="house_id" required placeholder="Enter house ID"><br><br>
+    <label for ="grade_id">Grade ID: </label>
+    <input type="number" id="grade_id" name="grade_id" required placeholder="Enter grade ID"><br><br>
+    <label for="medium">Medium:</label>
+    <select id="medium" name="medium" required>
+        <option value="">Select Medium</option>
+        <option value="Sinhala">Sinhala</option>
+        <option value="Tamil">Tamil</option>  
+        <option value="English">English</option>
+    </select><br><br>
+    <label for="date_of_admision">Date of Admissioin</label>
+    <input type="date" id="date_of_admision" name="date_of_admision" required><br><br>
+    <label for="per_address">Permanant Address:</label>
+    <textarea id="per_address" name="per_address" required placeholder="Enter permanent address"></textarea><br><br>
+    <label for="family_id">Family ID:</label>
+    <input type="number" id="family_id" name="family_id" required placeholder="Enter family ID"><br><br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form> -->
+
+<!-- <form class="row g-3">
+    <div class="col-md-6">
+        <label for="inputName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="inputName">
+    </div>
+    <div class="col-md-6">
+        <label for="inputAge" class="form-label">Age</label>
+        <input type="number" class="form-control" id="inputAge">
+    </div>
+    <div class="col-6">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+    </div>
+    <div class="col-6">
+        <label for="inputAddress" class="form-label">Address</label>
+        <textarea class="form-control" id="inputAddress" placeholder="1234 Main St"></textarea>
+    </div>
+   
+    <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-dark">Create Student</button>
+    </div>
+</form> -->
