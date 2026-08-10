@@ -1,0 +1,53 @@
+<h1>
+    <%= subject.subject_name %>'s Details
+</h1>
+<p>
+    <%= message %>
+</p>
+
+
+<table border="1" cellpadding="5" cellspacing="0"
+    style="border-collapse: collapse; width: 100%; color: #091fe6; font-family: Arial, sans-serif;">
+    <tr>
+        <td>Subject Name</td>
+        <td>
+            <%= subject.subject_name %>
+        </td>
+    </tr>
+    <tr>
+        <td>Subject Index</td>
+        <td>
+            <%= subject.subject_index %>
+        </td>
+    </tr>
+    <tr>
+        <td>Subject Order</td>
+        <td>
+            <%= subject.subject_order %>
+        </td>
+    </tr>
+    <tr>
+        <td>Subject Number</td>
+        <td>
+            <%= subject.subject_number %>
+        </td>
+    <tr>
+        <td>Colour</td>
+        <td>
+            <%= subject.colour %>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Action</td>
+        <td>
+            <button onclick="window.location.href='/subjects/<%= subject.id %>/edit'" class="btn btn-info">Edit</button>
+            <form action="/subjects/<%= subject.id %>?_method=DELETE" method="POST" style="display:inline;"
+                onsubmit="return confirm('Are you sure you want to delete this subject?');">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
+        </td>
+    </tr>
+    <button onclick="window.location.href='/subjects'" class="btn btn-primary">Back to Subject List</button>
+</table>
