@@ -1,0 +1,60 @@
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>New Family Registration Form</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/family" method="POST" class="row g-3">
+
+                <div class="col-md-6">
+                    <label for="mobile_number" class="form-label">Mobile Number:</label>
+                    <input type="number" class="form-control" id="mobile_number" name="mobile_number" required
+                        placeholder="Enter your mobile number">
+                </div>
+            
+                <div class="col-md-6">
+                    <label for="fa_first_name" class="form-label">Father's First Name:</label>
+                    <input type="text" class="form-control" id="fa_first_name" name="fa_first_name" required
+                        placeholder="Enter father's first name">
+                </div>
+                <div class="col-md-6">
+                    <label for="mo_first_name" class="form-label">Mother's First Name:</label>
+                    <input type="text" class="form-control" id="mo_first_name" name="mo_first_name" required
+                        placeholder="Enter mother's first name">
+                </div>
+              
+                <div class="col-md-6">
+                    <label for="fa_job" class="form-label">Father's Job:</label>
+                    <input type="text" class="form-control" id="fa_job" name="fa_job"
+                        placeholder="Enter job">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="mo_job" class="form-label">Mother's Job:</label>
+                    <input type="text" class="form-control" id="mo_job" name="mo_job" placeholder="Enter job">
+                </div> 
+
+                <div class="col-md-6">
+                    <label for="fa_nic_number" class="form-label">Father's NIC Number: </label>
+                    <input type="text" class="form-control" id="fa_nic_number" name="fa_nic_number" placeholder="Enter father's NIC number">
+                </div>
+                <div class="col-md-6">
+                    <label for="mo_nic_number" class="form-label">Mother's NIC Number: </label>
+                    <input type="text" class="form-control" id="mo_nic_number" name="mo_nic_number" placeholder="Enter mother's NIC number">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="residential_address" class="form-label">Residential Address:</label>
+                    <textarea class="form-control" id="residential_address" name="residential_address"
+                        placeholder="Enter residential address"></textarea>
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                    <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+                    <input type="reset" value="Reset" class="btn btn-danger px-4">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

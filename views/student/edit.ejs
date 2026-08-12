@@ -20,13 +20,13 @@
         <div class="col-md-6">
             <label for="last_name" class="form-label">Last Name:</label>
             <input type="text" class="form-control" id="last_name" name="last_name" required
-                placeholder="Enter last name" value="<%= student.last_name %>   ">
+                placeholder="Enter last name" value="<%= student.last_name %>">
         </div>
         <div class="col-md-6">
             <label for="gender" class="form-label">Gender:</label>
-            <select id="gender" name="gender" required class="form-select" value="<%= student.gender %>">
-                <option value='M'>Male</option>
-                <option value="F">Female</option>
+            <select id="gender" name="gender" required class="form-select" >
+                <option value='M' <%= student.gender === 'M' ? 'selected' : '' %>>Male</option>
+                <option value="F" <%= student.gender === 'F' ? 'selected' : '' %>>Female</option>
             </select>
         </div>
         <div class="col-md-6">
@@ -61,26 +61,26 @@
         <div class="col-md-6">
             <label for="medium" class="form-label">Medium:</label>
             <select id="medium" name="medium" required class="form-select">
-                <option value="Sinhala">Sinhala</option>
-                <option value="Tamil">Tamil</option>
-                <option value="English">English</option>
+                <option value="Sinhala" <%= student.medium === 'Sinhala' ? 'selected' : '' %>>Sinhala</option>
+                <option value="Tamil" <%= student.medium === 'Tamil' ? 'selected' : '' %>>Tamil</option>
+                <option value="English" <%= student.medium === 'English' ? 'selected' : '' %>>English</option>
             </select>
 
         </div>
         <div class="col-md-6">
             <label for="date_of_admission" class="form-label">Date of Admission</label>
-            <input type="date" class="form-control" id="date_of_admission" name="date_of_admission">
+            <input type="date" class="form-control" id="date_of_admission" name="date_of_admission"  value="<%= student.date_of_admission %>" >
         </div>
 
         <div class="col-md-6">
             <label for="per_address" class="form-label">Permanent Address:</label>
             <textarea class="form-control" id="per_address" name="per_address"
-                placeholder="Enter permanent address"></textarea>
+                placeholder="Enter permanent address"><%= student.per_address %></textarea>
         </div>
 
         <div class="col-md-6">
             <label for="family_id" class="form-label">Family ID:</label>
-            <input type="number" class="form-control" id="family_id" name="family_id" placeholder="Enter family ID">
+            <input type="number" class="form-control" id="family_id" name="family_id" placeholder="Enter family ID" value="<%= student.family_id %>">
         </div>
 
 

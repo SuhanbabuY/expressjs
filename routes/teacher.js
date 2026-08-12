@@ -78,9 +78,9 @@ router.get('/:id/edit', (req, res) => {
 //update teacher route
 router.put('/:id', (req, res) => {
     const teacherId = req.params.id;
-    const { registration_number,nic_number, first_name, last_name, gender ,title,date_of_birth,permanent_address} = req.body;
+    const { registration_number,nic_number, first_name, last_name, gender ,title,date_of_birth,permanent_address,mobile_number,date_of_first_appointment} = req.body;
 
-    if (!registration_number || !first_name || !last_name||!gender ||!title||!date_of_birth||!permanent_address) {
+    if (!registration_number || !first_name || !last_name||!gender ||!title||!date_of_birth||!permanent_address||!mobile_number||!date_of_first_appointment) {
         res.status(400).send('All fields are required');
         return;
     }
@@ -89,7 +89,7 @@ router.put('/:id', (req, res) => {
         if (err) {
             res.send('Error connecting to the database!');
         } else {
-            db.query('UPDATE teachers SET registration_number = ?, nic_number = ?, first_name = ?, last_name = ?, gender = ?, title = ?, date_of_birth = ?, permanent_address = ? WHERE id = ?', [registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address, teacherId], (err, results) => {
+            db.query('UPDATE teachers SET registration_number = ?, nic_number = ?, first_name = ?, last_name = ?, gender = ?, title = ?, date_of_birth = ?, permanent_address = ?, mobile_number = ?, date_of_first_appointment = ? WHERE id = ?', [registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address, mobile_number, date_of_first_appointment, teacherId], (err, results) => {
                 if (err) {
                     res.send('Error executing query!' + err);
                 } else {
@@ -109,7 +109,7 @@ router.get('/create', (req, res) => {
 //teacher create route
 router.post('/', (req, res) => {
     // res.send('Received data: ' + JSON.stringify(req.body));
-    const { registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address } = req.body;
+    const { registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address, mobile_number, date_of_first_appointment } = req.body;
 
     // res.send(`Received data: Registration Number - ${registration_number}, First Name - ${first_name}, Last Name - ${last_name}`);
     if (!registration_number || !first_name || !last_name) {
@@ -121,7 +121,7 @@ router.post('/', (req, res) => {
             res.send('Error connecting to the database!');
         } else {
 
-            db.query('INSERT INTO teachers ( registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)', [registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address], (err, results) => {
+            db.query('INSERT INTO teachers ( registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address, mobile_number, date_of_first_appointment ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [registration_number, nic_number, first_name, last_name, gender, title, date_of_birth, permanent_address, mobile_number, date_of_first_appointment], (err, results) => {
                 if (err) {
                     console.error(err);
                     return res.send(err.sqlMessage);

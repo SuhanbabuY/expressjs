@@ -4,7 +4,7 @@
 </h3>
 
 <div class="card-body">
-    <form action="/teachers" method="POST" class="row g-3">
+    <form action="/teachers/<%= teacher.id %>?_method=PUT" method="POST" class="row g-3">
         <div class="col-md-6">
             <label for="registration_number" class="form-label">Registration Number :</label>
             <input type="text" class="form-control" id="registration_number" name="registration_number" required
@@ -27,18 +27,19 @@
         </div>
         <div class="col-md-6">
             <label for="gender" class="form-label">Gender:</label>
-            <select id="gender" name="gender" required class="form-select" value="<%= teacher.gender %>">
-                <option value='M'>Male</option>
-                <option value="F">Female</option>
+            <select id="gender" name="gender" required class="form-select" >
+                <option value='M' <%= teacher.gender === 'M' ? 'selected' : '' %>>Male</option>
+                <option value="F" <%= teacher.gender === 'F' ? 'selected' : '' %>>Female</option>
             </select>
         </div>
 
         <div class="col-md-6">
-            <lavel for="title" class="form-label">Title:</label>
+            <label for="title" class="form-label">Title:</label>
                 <input type="text" class="form-control" id="title" name="title" required
                     placeholder="Enter title Mr or Mrs" value="<%= teacher.title %>">
         </div>
 
+       
 
         <div class="col-md-6">
             <label for="date_of_birth" class="form-label">Date of Birth:</label>
@@ -46,19 +47,17 @@
         </div>
 
 
-
-
         <div class="col-md-6">
-            <label for="per_address" class="form-label">Permanent Address:</label>
-            <textarea class="form-control" id="per_address" name="per_address"
-                placeholder="Enter permanent address"><%= teacher.per_address %></textarea>
+            <label for="permanent_address" class="form-label">Permanent Address:</label>
+            <textarea class="form-control" id="permanent_address" name="permanent_address"
+                placeholder="Enter permanent address"><%= teacher.permanent_address %></textarea>
         </div>
 
 
         <div class="col-md-6">
             <label for="mobile_number" class="form-label">Mobile Number:</label>
             <input type="number" class="form-control" id="mobile_number" name="mobile_number"
-                placeholder="Enter your mobile number" value="<%= teacher.mobile_number %> ">
+                placeholder="Enter your mobile number" value="<%= teacher.mobile_number %>">
         </div>
 
 

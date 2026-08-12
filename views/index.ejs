@@ -1,5 +1,30 @@
-<h1>this is my home page</h1>
-<p>Welcome to my home page!</p>
-<p>Message: <%= message %>
-</p>
-<p>This is school management system web application</p>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card shadow-lg border-0">
+                <div class="card-body text-center p-5">
+                    <h1 class="display-4 fw-bold text-primary mb-4">
+                        Student Management System
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        Welcome to my home page!
+                    </p>
+                    <div class="alert alert-info" role="alert">
+                        <strong>Message:</strong>
+                        <%= message %>
+                    </div>
+                    <p class="text-secondary fs-5">
+                        This is a school management system web application
+                    </p>
+                    <hr class="my-4">
+                    <a href="/students" class="btn btn-primary btn-lg me-2">Students</a>
+                    <a href="/teachers" class="btn btn-outline-primary btn-lg">Teachers</a>
+                    <a href="/family" class="btn btn-outline-primary btn-lg">Families</a>
+                    <a href="/grades" class="btn btn-outline-primary btn-lg">Grades</a>
+                    <a href="/houses" class="btn btn-outline-primary btn-lg">Houses</a>
+                    <a href="/subjects" class="btn btn-outline-primary btn-lg">Subjects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

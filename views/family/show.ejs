@@ -1,0 +1,44 @@
+<h1>
+    <%= family.fa_first_name %>'s Details
+    <%= family.mo_first_name %>'s Details
+</h1>
+<p>
+    <%= message %>
+</p>
+
+
+<table border="1" cellpadding="5" cellspacing="0"
+    style="border-collapse: collapse; width: 100%; color: #091fe6; font-family: Arial, sans-serif;">
+    <tr>
+        <td>Family Id</td>
+        <td>
+            <%= family.id %>
+        </td>
+    </tr>
+    <tr>
+        <td>Father"s First Name</td>
+        <td>
+            <%= family.fa_first_name %>
+        </td>
+    </tr>
+    <tr>
+        <td>Mother"s First Name</td>
+        <td>
+            <%= family.mo_first_name %>
+        </td>
+    </tr>
+  
+
+    <tr>
+        <td>Action</td>
+        <td>
+            <button onclick="window.location.href='/family/<%= family.id %>/edit'" class="btn btn-info">Edit</button>
+            <form action="/family/<%= family.id %>?_method=DELETE" method="POST" style="display:inline;"
+                onsubmit="return confirm('Are you sure you want to delete this family?');">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
+        </td>
+    </tr>
+    <button onclick="window.location.href='/family'" class="btn btn-primary">Back to Family List</button>
+</table>

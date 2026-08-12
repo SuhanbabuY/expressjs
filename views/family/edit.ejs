@@ -1,0 +1,59 @@
+<h3>
+    <%= family.fa_first_name %>'S informations
+</h3>
+
+<div class="card-body">
+    <form action="/family/<%= family.id %>?_method=PUT" method="POST" class="row g-3">
+
+        <div class="col-md-6">
+            <label for="mobile_number" class="form-label">Mobile Number:</label>
+            <input type="number" class="form-control" id="mobile_number" name="mobile_number" required
+                placeholder="Enter your mobile number" value="<%= family.mobile_number %>">
+        </div>
+
+        <div class="col-md-6">
+            <label for="fa_first_name" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="fa_first_name" name="fa_first_name" required
+                placeholder="Enter first name" value="<%= family.fa_first_name %>">
+        </div>
+        <div class="col-md-6">
+            <label for="mo_first_name" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="mo_first_name" name="mo_first_name" required
+                placeholder="Enter last name" value="<%= family.mo_first_name %>">
+        </div>
+
+        <div class="col-md-6">
+            <label for="fa_job" class="form-label">Father'sJob:</label>
+            <input type="text" class="form-control" id="fa_job" name="fa_job" placeholder="Enter job" value="<%= family.fa_job %>">
+        </div>
+
+        <div class="col-md-6">
+            <label for="mo_job" class="form-label">Mother'sJob:</label>
+            <input type="text" class="form-control" id="mo_job" name="mo_job" placeholder="Enter job" value="<%= family.mo_job %>">
+        </div>
+
+        <div class="col-md-6">
+            <label for="fa_nic_number" class="form-label">Father's NIC Number: </label>
+            <input type="text" class="form-control" id="fa_nic_number" name="fa_nic_number"
+                placeholder="Enter father's NIC number" value="<%= family.fa_nic_number %>">
+        </div>
+        <div class="col-md-6">
+            <label for="mo_nic_number" class="form-label">Mother's NIC Number: </label>
+            <input type="text" class="form-control" id="mo_nic_number" name="mo_nic_number"
+                placeholder="Enter mother's NIC number" value="<%= family.mo_nic_number %>">
+        </div>
+
+        <div class="col-md-6">
+            <label for="residential_address" class="form-label">Residential Address:</label>
+            <textarea class="form-control" id="residential_address" name="residential_address"
+                placeholder="Enter residential address"><%= family.residential_address %></textarea>
+        </div>
+
+        <div class="col-12 text-center mt-4">
+            <input type="submit" value="Submit" class="btn btn-primary px-4 me-2">
+            <input type="reset" value="Reset" class="btn btn-danger px-4">
+        </div>
+    </form>
+</div>
+</div>
+</div>
