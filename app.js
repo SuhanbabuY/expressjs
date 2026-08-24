@@ -6,6 +6,7 @@ const port = 3000;
 
 app.set('view engine', 'ejs');
 app.use(layout);
+app.use(express.static('public'));
 app.set('layout', 'layouts/main');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
