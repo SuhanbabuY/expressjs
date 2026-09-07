@@ -17,6 +17,7 @@ app.use('/houses', require('./routes/house.js'));
 app.use('/subjects', require('./routes/subject.js'));
 app.use('/teachers', require('./routes/teacher.js'));
 app.use('/family', require('./routes/family.js'));
+app.use('/studentApi', require('./routes/studentApi.js'));
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'home', message: 'This is the home page!' });
