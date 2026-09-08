@@ -11,6 +11,7 @@ app.set('layout', 'layouts/main');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(express.json());
 app.use('/students', require('./routes/student.js'));
 app.use('/grades', require('./routes/grade.js'));
 app.use('/houses', require('./routes/house.js'));
