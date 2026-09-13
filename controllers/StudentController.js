@@ -97,7 +97,7 @@ const updateStudent = (req, res) => {
 
     db.connect((err) => {
         if (err) {
-            res.send('Error connecting to the database!');
+            res.send('Error connecting to the database!!!!!!!!!!!!!!!!!!');
         } else {
             db.query('UPDATE students SET admission_number = ?, first_name = ?, last_name = ?, gender = ?, date_of_birth = ?, nic_number = ?, birth_certificate_number = ?, tele_number = ?, house_id = ?, grade_id = ?, medium = ?, date_of_admission = ?, per_address = ?, family_id = ? WHERE id = ?', [admission_number, first_name, last_name, gender, date_of_birth, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id, studentId], (err, results) => {
                 if (err) {
