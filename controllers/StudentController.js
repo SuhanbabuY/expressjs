@@ -21,7 +21,7 @@ const deleteStudent = (req, res) => {
 const getAllStudents = (req, res) => {
     db.connect((err) => {
         if (err) {
-            res.send('Error connecting to the database!');
+            res.send('Error connecting to the database!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
         } else {
             db.query('SELECT * FROM students order by id  desc limit 10 ', (err, results) => {
                 if (err) {
