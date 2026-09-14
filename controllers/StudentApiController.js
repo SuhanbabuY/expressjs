@@ -7,7 +7,7 @@ const deleteStudent = (req, res) => {
             console.error('Error connecting to the database!', err);
             return res.status(500).json({
                 "success": false,
-                "message": 'Error connecting to the database!',
+                "message": 'Error connecting to the database!!!!!',
             });
         } else {
             db.query('DELETE FROM students WHERE id = ?', [studentId], (err, results) => {
