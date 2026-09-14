@@ -12,6 +12,7 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.json());
+
 app.use('/students', require('./routes/student.js'));
 app.use('/grades', require('./routes/grade.js'));
 app.use('/houses', require('./routes/house.js'));
@@ -23,6 +24,12 @@ app.use('/studentApi', require('./routes/studentApi.js'));
 app.get('/', (req, res) => {
     res.render('index', { title: 'home', message: 'This is the home page!' });
 });
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+});
+
 
 //testing purpose code start---------------------------------------------------------------
 // app.get('/connect', (req, res) => {
@@ -45,9 +52,3 @@ app.get('/', (req, res) => {
 //     });
 // });
 //testing purpose code end---------------------------------------------------------------
-
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-});
-
