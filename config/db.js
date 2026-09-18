@@ -8,8 +8,9 @@ const db = mysql2.createConnection({
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    enableKeepAlive: true,
-    keepAliveInitialDelay: 0
+    waitforConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
 db.connect((err) => {
