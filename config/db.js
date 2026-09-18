@@ -13,18 +13,18 @@ const db = mysql2.createConnection({
     queueLimit: 0
 });
 
-db.connect((err) => {
-    if (err) {
-        console.error("❌ MySQL connection failed:", err.message);
-        return;
-    }
-    console.log("✅ MySQL connected");
-});
-db.on("error", (err) => {
-    console.error("❌ MySQL connection error:", err.code, err.message);
-    if (err.code === "ECONNRESET") {
-        console.error("MySQL connection was reset.");
-    }
-});
+// db.connect((err) => {
+//     if (err) {
+//         console.error("❌ MySQL connection failed:", err.message);
+//         return;
+//     }
+//     console.log("✅ MySQL connected");
+// });
+// db.on("error", (err) => {
+//     console.error("❌ MySQL connection error:", err.code, err.message);
+//     if (err.code === "ECONNRESET") {
+//         console.error("MySQL connection was reset.");
+//     }
+// });
 
 module.exports = db;
