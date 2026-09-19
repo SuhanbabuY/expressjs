@@ -2,7 +2,7 @@ const mysql2 = require('mysql2');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const db = mysql2.createConnection({
+const pool = mysql2.createConnection({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
@@ -26,5 +26,5 @@ const db = mysql2.createConnection({
 //         console.error("MySQL connection was reset.");
 //     }
 // });
-
+const db = pool.promise();
 module.exports = db;
